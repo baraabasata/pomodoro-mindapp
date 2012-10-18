@@ -1,6 +1,6 @@
 {
   name: "AppAThon.Pomodoro",
-  displayName: "Pomodoro",
+  displayName: "Motivational Tomato",
   version: "1.0",
   creator: "Cengage Learning",    
   rootURI: 'http://pomodoro-mindapp.herokuapp.com',
@@ -10,10 +10,10 @@
   dockItems: {
     "enter_chat": {
       icon: "/icon.jpg",
-      label: "Pomodoro",
+      label: "Motivational Tomato",
       action: {
         uri: "/",
-        width: 600
+        width: 200
       }
     }
   }
