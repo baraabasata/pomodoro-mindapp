@@ -9,7 +9,7 @@
 
   dockItems: {
     "enter_chat": {
-      icon: "/icon.png",
+      icon: "/icon.jpg",
       label: "Pomodoro",
       action: {
         uri: "/",
