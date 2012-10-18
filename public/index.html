@@ -171,24 +171,48 @@
         font-style: italic;
       }
       .tomato {
-        width: 150px;
+        background: url(/assets/tomato.jpg);
+        left: 0;
+        top: 0;
+        position: absolute;
+        width: 300px;
+        height: 285px;
+      }
+      .tomato-overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: rgba(127, 127, 127, 0.9);
+        width: 300px;
+        height: 285px;
+        z-index: 10;
       }
     </style>
   </head>
   <body>
+    <div class="tomato-overlay"></div>
     <div class="tomato"></div>
 
     <script type="text/javascript" src="/assets/application.js"></script>
     <script>
     $(document).ready(function() {
-      $('.tomato').polartimer({
-        timerSeconds: 25 * 60,
-        color: '#F00',
-        opacity: 0.7,
-        callback: function () {
-          alert('one motivational tomato has elapsed');
+      var interval;
+
+      function tick() {
+        var width = $('.tomato-overlay').width();
+        var offset = $('.tomato-overlay').offset();
+        $.extend(offset, { left: offset.left + 15 });
+
+        $('.tomato-overlay').offset(offset);
+        $('.tomato-overlay').width(width - 15);
+
+        if (width <= 0) {
+          clearInterval(interval);
+          alert('you have completed a Motivational Tomato and you have earned a break');
         }
-      }).polartimer('start');
+      }
+      
+      interval = setInterval(tick, 1000);
     });
     </script>
   </body>
