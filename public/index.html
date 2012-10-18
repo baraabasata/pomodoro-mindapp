@@ -187,11 +187,19 @@
         height: 285px;
         z-index: 10;
       }
+
+      .go {
+        position: absolute;
+        top: 320px;
+        left: 130px;
+      }
     </style>
   </head>
   <body>
     <div class="tomato-overlay"></div>
     <div class="tomato"></div>
+
+    <button class="go">Go!</button>
 
     <script type="text/javascript" src="/assets/application.js"></script>
     <script>
@@ -208,11 +216,17 @@
 
         if (width <= 0) {
           clearInterval(interval);
+          $('.go').show();
           alert('you have completed a Motivational Tomato and you have earned a break');
         }
       }
       
-      interval = setInterval(tick, 1000);
+      $('.go').click(function() {
+        $('.tomato-overlay').width(300);
+        $('.tomato-overlay').css('left', '0px');
+        $(this).hide();
+        interval = setInterval(tick, 1000);
+      });
     });
     </script>
   </body>
