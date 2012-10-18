@@ -201,10 +201,10 @@
       function tick() {
         var width = $('.tomato-overlay').width();
         var offset = $('.tomato-overlay').offset();
-        $.extend(offset, { left: offset.left + 15 });
+        $.extend(offset, { left: offset.left + 5 });
 
         $('.tomato-overlay').offset(offset);
-        $('.tomato-overlay').width(width - 15);
+        $('.tomato-overlay').width(width - 5);
 
         if (width <= 0) {
           clearInterval(interval);
